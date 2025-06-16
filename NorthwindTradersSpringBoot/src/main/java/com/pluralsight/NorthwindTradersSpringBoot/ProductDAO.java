@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public  class ProductDAO implements IProductDAO {
-    List<Product> db = new ArrayList<>();
+    private List<Product> db = new ArrayList<>();
 
     public ProductDAO() {
         this.db.add(new Product(1, "product1", "category", 12.90));

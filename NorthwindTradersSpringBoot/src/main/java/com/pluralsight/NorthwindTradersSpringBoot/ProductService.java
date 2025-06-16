@@ -6,16 +6,15 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class ProductService {
-    private final SimpleProductDAO productDao;
+    private final IProductDAO productDao;
 
     @Autowired
-    public ProductService(SimpleProductDAO productDao){
+    public ProductService(IProductDAO productDao){
         this.productDao = productDao;
     }
 
    public void addProduct(Product product){
-        Product newProduct = new Product(product);
-        this.productDao.addProduct(newProduct);
+        this.productDao.addProduct(product);
    }
 
 }

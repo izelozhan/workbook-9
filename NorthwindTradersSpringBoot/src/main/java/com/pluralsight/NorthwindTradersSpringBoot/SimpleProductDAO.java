@@ -8,22 +8,20 @@ import java.util.List;
 @Component
 public class SimpleProductDAO implements IProductDAO {
 
-    private List<Product> productList = new ArrayList<>();
+    private final List<Product> productList = new ArrayList<>();
 
     public SimpleProductDAO() {
-        productList.add(new Product(1, "product1", "category", 12.90));
-        productList.add(new Product(2, "product2", "category", 14.90));
-        productList.add(new Product(3, "product3", "category", 19.90));
+        productList.add(new Product(1, "Pen", "Stationery", 1.99));
+        productList.add(new Product(2, "Notebook", "Stationery", 3.49));
     }
-
 
     @Override
     public List<Product> getProducts() {
-        return List.of();
+        return productList;
     }
 
     @Override
     public void addProduct(Product product) {
-
+        productList.add(product);
     }
 }
