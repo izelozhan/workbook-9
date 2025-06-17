@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+//@Component
 public class SimpleProductDAO implements IProductDAO {
 
     private final List<Product> productList = new ArrayList<>();
