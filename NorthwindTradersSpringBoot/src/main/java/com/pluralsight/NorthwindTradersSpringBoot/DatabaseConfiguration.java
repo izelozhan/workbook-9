@@ -1,4 +1,4 @@
-package com.pluralsight.config;
+package com.pluralsight.NorthwindTradersSpringBoot;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +14,9 @@ public class DatabaseConfiguration {
     private BasicDataSource ds;
 
     @Autowired
-    public DatabaseConfiguration(@Value("${datasource.url}") String url,
-                                 @Value("${datasource.username}") String username,
-                                 @Value("${datasource.password}") String password) {
+    public DatabaseConfiguration(@Value("${connectionUrl}") String url,
+                                 @Value("${username}") String username,
+                                 @Value("${password}") String password) {
         ds = new BasicDataSource();
         ds.setUrl(url);
         ds.setUsername(username);
