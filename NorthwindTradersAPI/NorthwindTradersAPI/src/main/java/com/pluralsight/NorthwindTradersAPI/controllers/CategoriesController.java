@@ -26,6 +26,7 @@ public class CategoriesController {
 
     @GetMapping("/{id}")
     public Category getCategoryById(@PathVariable int id) {
-       return categoryDao.getById(id);
+       Category category =  categoryDao.getById(id);
+       return  category;
     }
 }

@@ -12,7 +12,7 @@ import java.util.List;
 
 @Component
 public class JdbcCategoryDao implements ICategoryDao {
-    private final DataSource dataSource;
+    private  DataSource dataSource;
 
     @Autowired
     public JdbcCategoryDao(DataSource dataSource) {
