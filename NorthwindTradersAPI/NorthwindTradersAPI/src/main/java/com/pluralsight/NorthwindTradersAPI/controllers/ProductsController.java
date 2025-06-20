@@ -26,4 +26,9 @@ public class ProductsController {
         return productDao.getById(id);
     }
 
+    @DeleteMapping("/{id}")
+    public void deleteProduct(@PathVariable int id){
+        productDao.delete(id);
+    }
+
 }

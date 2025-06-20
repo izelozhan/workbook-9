@@ -2,10 +2,7 @@ package com.pluralsight.NorthwindTradersAPI.controllers;
 
 import com.pluralsight.NorthwindTradersAPI.dao.ICategoryDao;
 import com.pluralsight.NorthwindTradersAPI.models.Category;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,4 +26,10 @@ public class CategoriesController {
        Category category =  categoryDao.getById(id);
        return  category;
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteCategory(@PathVariable int id){
+        categoryDao.delete(id);
+    }
+
 }

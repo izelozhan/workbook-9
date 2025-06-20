@@ -65,5 +65,19 @@ public class JdbcCategoryDao implements ICategoryDao {
 
         return null;
     }
+
+    @Override
+    public void delete(int id){
+        String sql = "DELETE FROM categories WHERE categoryId = ?";
+
+        try (Connection conn = dataSource.getConnection();
+             PreparedStatement statement = conn.prepareStatement(sql)){
+
+            statement.setInt(1, id);
+            statement.executeUpdate();
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
 }
 
